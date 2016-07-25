@@ -17,11 +17,94 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <div id="content"></div>
 
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
+
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script type="text/babel">
+
+            var Comanda = React.createClass({ displayName: 'Comanda',
+                render: function(){
+                    return(
+                        <h1>Comanda</h1>
+                    );
+                }
+            })
+
+            ReactDOM.render(
+                <Comanda />
+                document.getElementById('content');
+            );
+        </script>
+        <script type="text/babel">
+           /* var data = [
+                {id: 1, author: "Pete Hunt", text: "This is one comment"},
+                {id: 2, author: "Jordan Walke", text: "This is *another* comment"}
+            ];
+
+            var CommentBox = React.createClass({displayName: 'CommentBox',
+                render: function(){
+                    return(
+                        <div className="commentBox">
+                            <h1>Comments</h1>
+                            <CommentList data={this.props.data} />
+                            <CommentForm />
+                        </div>
+                    );
+                }
+            });
+
+            var CommentList = React.createClass({ displayName: "CommentList",
+                render: function(){
+                    var commentNodes = this.props.data.map(function(comment){
+                        return(
+                            <Comment author={comment.author} key={comment.id}>{comment.text}</Comment>
+                        );
+                    });
+                    return(
+                        <div className="commentList">
+                            {commentNodes}
+                        </div>
+                    );
+                }
+            });
+
+            var Comment = React.createClass({ displayName: 'Comment',
+                rawMarkup: function() {
+                    var md = new Remarkable();
+                    var rawMarkup  = md.render(this.props.children.toString());
+                    return { __html: rawMarkup };
+                },
+                render: function(){
+                    return(
+                        <div className="comment">
+                            <h2 className="commentAuthor">
+                                {this.props.author}
+                            </h2>
+                            <span dangerouslySetInnerHTML={this.rawMarkup()} />
+                        </div>
+                    );
+                }
+            });
+
+            var CommentForm = React.createClass({ displayName: 'CommentForm',
+                render: function(){
+                    return(
+                        <textarea></textarea>
+                    )
+                }
+            })
+
+            ReactDOM.render(
+              <CommentBox data={data} />,
+              document.getElementById('example')
+            );*/
+        </script>
     </body>
 </html>
